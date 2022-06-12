@@ -10,6 +10,12 @@
 
 <div class="container mt-5">
     <h1 th:text="${title}"/>
+
+    <div th:each="post : ${posts}" class="alert alert-info mt-2">
+        <h3 th:text="${post.title}"/>
+        <p th:text="${post.annotation}" />
+        <a th:href="'/blogs/' + ${post.id}">See more...</a>
+    </div>
 </div>
 
 <div th:insert="Components/Footer :: footer"></div>
